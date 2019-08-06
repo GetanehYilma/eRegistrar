@@ -16,48 +16,37 @@ import edu.mum.cs.cs425.demowebapps.eregistrar.service.StudentService;
 public class StudentServiceImpl implements StudentService{
 	
 	@Autowired
-	private StudentRepository repo;
+	private StudentRepository studentRepo;
 
 	@Override
 	public Iterable<Student> getAllStudents() {
-		// TODO Auto-generated method stub
-		return repo.findAll(Sort.by("firstName", "lastName"));
+		return studentRepo.findAll(Sort.by("firstName", "lastName"));
 	}
 
 	@Override
 	public Student registerNewStudent(Student newStudent) {
-		// TODO Auto-generated method stub
-		return repo.save(newStudent);
+		return studentRepo.save(newStudent);
 		
 	}
 
 	@Override
 	public Page<Student> getAllStudentPaged(int page) {
-		// TODO Auto-generated method stub
-		return repo.findAll(PageRequest.of(page, 5, Sort.by("firstName","lastName")));
+		return studentRepo.findAll(PageRequest.of(page, 5, Sort.by("firstName","lastName")));
 	}
-
-//	@Override
-//	public Student findStudentByFirstName(String name) {
-//		// TODO Auto-generated method stub
-//		return repo.findStudentByFirstName(name);
-//	}
 
 	@Override
 	public Student saveStudent(@Valid Student student) {
-		// TODO Auto-generated method stub
-		return repo.save(student);
+		return studentRepo.save(student);
 	}
 
-@Override
-public Student getStudentById(Integer studentId) {
-	// TODO Auto-generated method stub
-	return repo.findById(studentId).orElse(null);
+	@Override
+	public Student getStudentById(Integer studentId) {
+	return studentRepo.findById(studentId).orElse(null);
 }
 
-@Override
-public void deleteStudentById(Integer studentId) {
-	repo.deleteById(studentId);	
+	@Override
+	public void deleteStudentById(Integer studentId) {
+		studentRepo.deleteById(studentId);	
 }
 
 
