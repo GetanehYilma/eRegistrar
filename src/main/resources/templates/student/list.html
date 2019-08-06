@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -13,7 +13,7 @@
   <body>   
 	 <nav aria-label="breadcrumb">
 	  <ol class="breadcrumb">
-	  	<li class="breadcrumb-item"><a href="/">eRegistrar Home</a></li>
+	  	<li class="breadcrumb-item"><a th:href="@{/eregistrar}">Home</a></li>
 	    <li class="breadcrumb-item"><a href="/student/register">Register</a></li>
 	    <li class="breadcrumb-item active" aria-current="page">Students</li>
 	  </ol>

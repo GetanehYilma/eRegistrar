@@ -14,21 +14,20 @@
 	 <nav aria-label="breadcrumb">
 	  <ol class="breadcrumb">
 	  	<li class="breadcrumb-item active" aria-current="page">Home</li>
-	    <li class="breadcrumb-item"><a href="/student/register">Register</a></li>
-	    <li class="breadcrumb-item"><a href="/student/list">Students</a></li>
+	    <li class="breadcrumb-item"><a th:href="@{/student/register}">Register</a></li>
+	    <li class="breadcrumb-item"><a th:href="@{/student/list}">Students</a></li>
 	  </ol>
 	</nav>
 	 
     <div class="container">
   	<!-- Content here -->
   		<h2>Welcome to Registrar!</h2><br>
-  		<button>
-		<a href="../student/register">Register new student</a>
-		</button><br><br>
+  		<hr>
+  
+		<a th:href="@{/student/register}" class="btn btn-primary btn-sm mb-3">Register new student</a><br>
 		
-		<button>
-		<a href="../student/list">Students</a>  		
-  		</button>
+		<a th:href="@{/student/list}" class="btn btn-primary btn-sm mb-3">Students</a>  		
+  		
 	</div>
     
     

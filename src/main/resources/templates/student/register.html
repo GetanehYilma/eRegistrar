@@ -10,12 +10,12 @@
 
     <title>Register page</title>
   </head>
-  <body bgcolor="red">  
+  <body>  
   <nav aria-label="breadcrumb">
 	  <ol class="breadcrumb">
-	  	<li class="breadcrumb-item"><a href="/">eRegistrar Home</a></li>
+	  	<li class="breadcrumb-item"><a href="/eregistrar">Home</a></li>
 	    <li class="breadcrumb-item active" aria-current="page">Register</li>
-	    <li class="breadcrumb-item"><a href="/student/list">Students</a></li>
+	    <li class="breadcrumb-item"><a th:href="@{/student/list}">Students</a></li>
 	  </ol>
 	</nav>
     
@@ -105,11 +105,16 @@
 					
 				</div>
                 <div style="float:right;">
-                    <a href="/student/list" class="btn btn-outline-warning">Cancel</a>&nbsp;&nbsp;&nbsp;
+                    <a th:href="@{/student/list}" class="btn btn-outline-warning">Cancel</a>&nbsp;&nbsp;&nbsp;
                     <button id="btnSubmit" type="submit" class="btn btn-outline-success">Save Student</button>
                 </div>
             </fieldset>
         </form>
+        
+        <hr>
+        <a th:href="@{/student/list}">Back to Student list</a><br>
+        <a th:href="@{/eregistrar}">Back to Home</a>
+        
 	</div>
 
 
